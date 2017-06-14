@@ -75,11 +75,14 @@ created(){
 		height: 100vh;
 		z-index:100;
 		left:0rem;
-		top:0;
+		top:1rem;
 		background:white;
 	}
+
 	.lingshi .titl{
 		font-size:0.3rem;
+		height: 1rem
+
 	}
 	.lingshi ul{
 		display: flex;
