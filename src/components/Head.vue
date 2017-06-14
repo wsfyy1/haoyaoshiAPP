@@ -52,7 +52,7 @@ html{
   font-size:30px;
   border-radius: 10px 
 }
-img{
+ .head img{
   width: 0.8rem;
   height: 0.8rem
 

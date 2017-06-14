@@ -3,6 +3,7 @@
   <router-view></router-view> 
     <mt-tab-container v-model="selected">
       <mt-tab-container-item id="tab-container1" >
+    
       <Pindao/>
       </mt-tab-container-item>
       <mt-tab-container-item id="tab-container2">
@@ -33,7 +34,7 @@
                  <span >分类</span>
             </mt-tab-item>
             <mt-tab-item >
-                  <i class="iconfont icon-gouwuche1"  @click="choose4"></i> 
+                  <i class="iconfont icon-gouwuche"  @click="choose4"></i> 
                   <span>购物车</span>
             </mt-tab-item>
             <mt-tab-item  >
@@ -46,6 +47,7 @@
 </template>
 
 <script>
+import Fenlei from '@/components/Fenlei'
 import Pindao from "./components/Pindao"
 export default {
   name: 'Maining',
@@ -54,8 +56,9 @@ export default {
       selected: 'tab-container1'
     }
   },
-  template:"<Pindao />",
+  template:"<Fenlei><Fenlei/><Pindao><Pindao />",
   components:{
+    Fenlei,
     Pindao
   },
   methods:{
@@ -105,7 +108,7 @@ span{
   font-size:0.4rem;
 }
 .mint-tab-container-wrap{
-  height: 70vh
+  height: 100vh-2rem
 }
 .mint-tab-item{
   display: flex;
