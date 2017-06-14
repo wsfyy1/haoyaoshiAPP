@@ -10,6 +10,7 @@ import AllBuy from '@/components/AllBuy'
 import SelfHelp from '@/components/SelfHelp'
 import MySearch from '@/components/MySearch'
 import WuliuSearch from '@/components/WuliuSearch'
+import Wode from '@/components/Wode'
 
 Vue.use(Router)
 

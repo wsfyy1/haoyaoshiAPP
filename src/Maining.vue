@@ -3,7 +3,8 @@
   <router-view></router-view> 
     <mt-tab-container v-model="selected">
       <mt-tab-container-item id="tab-container1" >
-      <Pindao/>
+        <Fenlei></Fenlei>
+        <Pindao></Pindao>
       </mt-tab-container-item>
       <mt-tab-container-item id="tab-container2">
         <mt-cell v-for="n in 5" title="tab-container 2"></mt-cell>
@@ -15,7 +16,7 @@
         <mt-cell v-for="n in 7" title="tab-container 4"></mt-cell>
       </mt-tab-container-item>
        <mt-tab-container-item id="tab-container5">
-        <mt-cell v-for="n in 7" title="tab-container 5"></mt-cell>
+        <Wode></Wode>
       </mt-tab-container-item>
     </mt-tab-container>
   <div class="footer"> 
@@ -46,7 +47,10 @@
 </template>
 
 <script>
+import Fenlei from "./components/Fenlei"
 import Pindao from "./components/Pindao"
+import Wode from "./components/Wode"
+
 export default {
   name: 'Maining',
   data(){
@@ -54,9 +58,11 @@ export default {
       selected: 'tab-container1'
     }
   },
-  template:"<Pindao />",
+  template:"<Fenlei></Fenlei><Pindao></Pindao><Wode></Wode>",
   components:{
-    Pindao
+    Fenlei,
+    Pindao,
+    Wode
   },
   methods:{
     choose1(){
@@ -78,7 +84,7 @@ export default {
 }
 </script>
 
-<style >
+<style scope>
 #box{
   height:100vh;
 }
@@ -116,5 +122,7 @@ span{
 .mint-tabbar{
   height: 1rem;
 }
-
+#box .mt-tab-container-item{
+  background: #F2F2F2;
+}
 </style>

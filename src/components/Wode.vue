@@ -1,6 +1,6 @@
 <template>
-	<div class="mySearch">
-		<mt-header fixed title="我要寻药">
+	<div class="wode">
+		<mt-header fixed title="手机验证码登录">
 	  		 <router-link to="/" slot="left">
 			    <mt-button icon="back" v-if="yincang">返回</mt-button>
 			  </router-link>
@@ -31,7 +31,7 @@
 </template>
 <script>
 export default {
-  name: 'MySearch',
+  name: 'Wode',
   data:function(){
 		return {
 			 yincang:true,
@@ -43,7 +43,8 @@ export default {
 			this.yincang=true
 		},
 			
-	} 
+	}
+  
 }
 </script>
 <style scope>
@@ -51,45 +52,34 @@ export default {
 		margin: 0;
 		padding: 0;
 	}
-	html{
-		font-size: 15.625vw;
-		/*font-family:"微软雅黑";*/
-	}
-	.mySearch{
+	.wode{
 		width:100%;
-		height:100vh;
-		background: #F2F2F2;
-		position: absolute;
-		left:0;
-		top:1rem;
-		z-index:1;
 	}
-	.mySearch .mint-header{
+	.wode .mint-header{
 		background: #0075de;
 		height:1rem;
 	}
-	.mySearch input{
+	.wode input{
 		padding-left:40px;
 	}
-	.mySearch .Pnumber{
+	.wode .Pnumber{
 		width:100%;
 		height:0.8rem;
 	}
-	.mySearch .Pnumber input{
+	.wode .Pnumber input{
 		width:100%;
 		height:100%;
 		border:0;
 		outline: none;
 		display: block;
 	}
-	.mySearch .yanzhengma{
+	.wode .yanzhengma{
 		width:100%;
 		height:0.8rem;
 		border-top: 1px solid #dcdcdc;
 		border-bottom: 1px solid #dcdcdc;
-		background: #fff;
 	}
-	.mySearch .yanzhengma input{
+	.wode .yanzhengma input{
 		display: block;
 		float: left;
 		width:50%;
@@ -97,7 +87,7 @@ export default {
 		border:0;
 		outline: none;
 	}
-	.mySearch .yanzhengma button{
+	.wode .yanzhengma button{
 		display: block;
 		width:28%;
 		height:80%;
@@ -110,7 +100,7 @@ export default {
 		border-radius:2px;
 		outline: none;
 	}
-	.mySearch .denglu{
+	.wode .denglu{
 		width:90%;
 		height:0.7rem;
 		border:0;
@@ -120,7 +110,7 @@ export default {
 		color:#fff;
 		outline: none;
 	}
-	.mySearch .a1{
+	.wode .a1{
 		color:#5790bb;
 		font-size: 0.25rem;
 		float:right;
@@ -128,13 +118,13 @@ export default {
 		margin-top: 10px;
 		padding-left: 10px;
 	}
-	.mySearch .a2{
+	.wode .a2{
 		color:#5790bb;
 		font-size: 0.25rem;
 		float:right;
 		margin-top: 10px;
 	}
-	.mySearch p{
+	.wode p{
 		width:90%;
 		height:0.5rem;
 		padding-top: 0.25rem;
@@ -143,29 +133,29 @@ export default {
 		font-size: 0.25rem;
 		color:#666;
 	}
-	.mySearch .fangshi{
+	.wode .fangshi{
 		width:100%;
 		height:0.8rem;
 		padding-left:10%;
 	}
-	.mySearch .fangshi dl{
+	.wode .fangshi dl{
 		width:0.9rem;
 		height:1.2rem;
 		float:left;
 		margin-left: 60px;
 	}
-	.mySearch .fangshi dl dt{
+	.wode .fangshi dl dt{
 		width:0.7rem;
 		height:0.7rem;
 		padding: 0.1rem 0 0 0.1rem;
 		border-radius: 0.45rem;
 		border:1px solid #d2d2d2;
 	}
-	.mySearch .fangshi dl dt img{
+	.wode .fangshi dl dt img{
 		display: block;
 		width:80%;
 	}
-	.mySearch .fangshi dl dd{
+	.wode .fangshi dl dd{
 		width:100%;
 		height:0.3rem;
 		text-align: center;
@@ -174,4 +164,3 @@ export default {
 		color:#666;
 	}
 </style>
-

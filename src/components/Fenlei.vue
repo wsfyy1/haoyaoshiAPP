@@ -64,34 +64,39 @@
 		padding: 0;
 		margin: 0;
 	}
-	a{
+	.fenlei a{
 		text-decoration: none;
 	}
-	ul{
+	.fenlei ul{
 		display: flex;
 		justify-content: space-around;
 		flex-wrap: wrap;
 		width:100%;
 		margin: 0;
+		margin-top: 5px;
 	}
-	ul li{
+	.fenlei ul li{
 		list-style: none;
+		width:20%;
+		margin:5px;				
+	}
+	.fenlei ul li a{
 		display: flex;
+		width:100%;
 		flex-direction: column;
 		align-items: center;
-		width:20%;
-		margin:5px;
+		
 	}
-	ul li i{
+	.fenlei ul li a i {
 		display: block;
-		width:3rem;
-		height:3rem;
+		width:1rem;
+		height:1rem;
 		text-align:center;
-		line-height: 3rem;
+		line-height:1rem;
 		margin-bottom:5px;
-		font-size: 1.9rem!important;
+		font-size:0.6rem!important;
 		color:white!important;
-		border-radius: 1.2rem;
+		border-radius:0.4rem;
 	}
 	.icon-fenlei{background: #ffb313}
 	.icon-quan{background: #ff135b}
@@ -101,8 +106,8 @@
 	.icon-zizhen{background: #e5004f}
 	.icon-caigouxunyuan{background: #ff5500}
 	.icon-wuliuchaxun_Nose{background: #08a7e7}
-	ul li span{
-		font-size: 0.8rem;
+	.fenlei ul li span{
+		font-size: 0.25rem;
 		color:#616161;
 		margin:8px 0;
 	}
