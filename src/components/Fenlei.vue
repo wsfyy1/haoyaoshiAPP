@@ -64,6 +64,10 @@
 		padding: 0;
 		margin: 0;
 	}
+	.fenlei{
+		background: #fff;
+		margin:5px 0;
+	}
 	.fenlei a{
 		text-decoration: none;
 	}

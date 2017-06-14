@@ -10,7 +10,19 @@ import AllBuy from '@/components/AllBuy'
 import SelfHelp from '@/components/SelfHelp'
 import MySearch from '@/components/MySearch'
 import WuliuSearch from '@/components/WuliuSearch'
+
 import Wode from '@/components/Wode'
+
+import Pindao from '@/components/Pindao'
+import Lingshi from '@/components/Lingshi'
+/*import Muying from '@/components/Muying'
+import Jisheng from '@/components/Jisheng'
+import Man from '@/components/Man'
+import Woman from '@/components/Woman'
+import Child from '@/components/Child'
+import Old from '@/components/Old'*/
+
+
 
 Vue.use(Router)
 
@@ -57,6 +69,44 @@ export default new Router({
     	path: '/WuliuSearch',
 	    name: 'WuliuSearch',
 	    component: WuliuSearch
-    }
+    },{
+    	path:"/",
+      name: 'Pindao',
+      component: Pindao
+    },{
+    	path:"/Lingshi/:id",
+      name: 'Lingshi',
+      component: Lingshi
+    },
+  /*  {
+    	path:"/Muying/:id",
+      name: 'Muying',
+      component: Muying
+    },
+    {
+    	path:"/Jisheng/:id",
+      name: 'Jisheng',
+      component: Jisheng
+    },
+    {
+    	path:"/Man/:id",
+      name: 'Man',
+      component: Man
+    },
+    {
+    	path:"/Woman/:id",
+      name: 'Woman',
+      component: Woman
+    },
+     {
+    	path:"/Child/:id",
+      name: 'Child',
+      component: Child
+    },
+    {
+    	path:"/Old/:id",
+      name: 'Old',
+      component: Old
+    }*/
   ]
 })

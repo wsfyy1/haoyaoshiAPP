@@ -34,7 +34,7 @@
                  <span >分类</span>
             </mt-tab-item>
             <mt-tab-item >
-                  <i class="iconfont icon-gouwuche1"  @click="choose4"></i> 
+                  <i class="iconfont icon-gouwuche"  @click="choose4"></i> 
                   <span>购物车</span>
             </mt-tab-item>
             <mt-tab-item  >
@@ -47,6 +47,7 @@
 </template>
 
 <script>
+
 import Fenlei from "./components/Fenlei"
 import Pindao from "./components/Pindao"
 import Wode from "./components/Wode"
@@ -87,6 +88,7 @@ export default {
 <style scope>
 #box{
   height:100vh;
+  background: #F2F2F2;
 }
 .footer{
 height: 1rem;
@@ -111,7 +113,7 @@ span{
   font-size:0.4rem;
 }
 .mint-tab-container-wrap{
-  height: 70vh
+  height: 100vh-2rem
 }
 .mint-tab-item{
   display: flex;
