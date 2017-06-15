@@ -78,12 +78,18 @@ created(){
 		top:1rem;
 		background:white;
 	}
+<<<<<<< HEAD
+
+=======
 	.lingshi .mint-header{
 		background: #0075de;
 		height:1rem;
 	}
+>>>>>>> 863083844305da7dc77925326e4fad2ed4d51c44
 	.lingshi .titl{
 		font-size:0.3rem;
+		height: 1rem
+
 	}
 	.lingshi ul{
 		display: flex;
