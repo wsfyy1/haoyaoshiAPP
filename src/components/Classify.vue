@@ -1,9 +1,8 @@
 <template>
-	<div>
 		<div class="classify">
 			<mt-header fixed title="商品分类">
 		  		 <router-link to="/" slot="left">
-				    <mt-button icon="back" v-if="yincang">返回</mt-button>
+				    <mt-button  v-if="yincang">X</mt-button>
 				  </router-link>
 				  <mt-button icon="more" slot="right" @click="xianshi"></mt-button>
 		  	</mt-header>
@@ -122,7 +121,7 @@
 				</mt-tab-container-item>
 			</mt-tab-container>
 		</div>
-	</div>
+
 </template>
 <script>
 export default {

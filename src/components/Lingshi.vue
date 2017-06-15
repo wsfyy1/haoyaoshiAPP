@@ -72,7 +72,7 @@ created(){
 	.lingshi{
 		position: absolute;
 		width: 100%;
-		height: 100vh;
+		/*height: 100vh;*/
 		z-index:100;
 		left:0rem;
 		top:1rem;

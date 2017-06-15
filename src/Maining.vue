@@ -1,45 +1,38 @@
 <template> 
    <div id ="box">
   <router-view></router-view> 
-    <mt-tab-container v-model="selected">
-      <mt-tab-container-item id="tab-container1" >
-        <Fenlei></Fenlei>
-        <Pindao></Pindao>
-      </mt-tab-container-item>
-      <mt-tab-container-item id="tab-container2">
-        <mt-cell v-for="n in 5" title="tab-container 2"></mt-cell>
-      </mt-tab-container-item>
-      <mt-tab-container-item id="tab-container3">
-        <mt-cell v-for="n in 7" title="tab-container 3"></mt-cell>
-      </mt-tab-container-item>
-       <mt-tab-container-item id="tab-container4">
-        <mt-cell v-for="n in 7" title="tab-container 4"></mt-cell>
-      </mt-tab-container-item>
-       <mt-tab-container-item id="tab-container5">
-        <Wode></Wode>
-      </mt-tab-container-item>
-    </mt-tab-container>
+
   <div class="footer"> 
        <mt-tabbar >
             <mt-tab-item >
-                <i class="iconfont icon-shouye-copy-copy-copy" @click="choose1"></i>
+              <router-link :to="{ name:'Head' }">
+                <i class="iconfont icon-shouye-copy-copy-copy"></i>
                 <span > 首页</span>
+              </router-link>
             </mt-tab-item>
             <mt-tab-item  >
-                <i class="iconfont icon-ditu" @click="choose2"></i>  
+              <router-link :to="{ name:'Classify' }">
+                <i class="iconfont icon-ditu" ></i>  
                 <span> 联系我们</span>
+              </router-link>
             </mt-tab-item>
             <mt-tab-item >
-                 <i class="iconfont icon-fenlei1"  @click="choose3"></i>  
+              <router-link :to="{ name:'Classify' }">
+                 <i class="iconfont icon-fenlei1"></i>  
                  <span >分类</span>
+              </router-link>
             </mt-tab-item>
             <mt-tab-item >
-                  <i class="iconfont icon-gouwuche"  @click="choose4"></i> 
-                  <span>购物车</span>
+              <router-link :to="{ name:'Classify'}" >
+                <i class="iconfont icon-gouwuche"></i> 
+                <span>购物车</span>
+              </router-link>
             </mt-tab-item>
             <mt-tab-item  >
-              <i class="iconfont icon-wode" @click="choose5"></i>
-              <span>我的</span>
+              <router-link :to="{ name:'Wode' }">
+                <i class="iconfont icon-wode"></i>
+                <span>我的</span>
+              </router-link>
             </mt-tab-item>
       </mt-tabbar>
     </div> 
@@ -47,41 +40,8 @@
 </template>
 
 <script>
-
-import Fenlei from "./components/Fenlei"
-import Pindao from "./components/Pindao"
-import Wode from "./components/Wode"
-
 export default {
-  name: 'Maining',
-  data(){
-    return{
-      selected: 'tab-container1'
-    }
-  },
-  template:"<Fenlei></Fenlei><Pindao></Pindao><Wode></Wode>",
-  components:{
-    Fenlei,
-    Pindao,
-    Wode
-  },
-  methods:{
-    choose1(){
-      this.selected  = 'tab-container1'
-    },
-    choose2(){
-      this.selected  = 'tab-container2'
-    },
-    choose3(){
-      this.selected  = 'tab-container3'
-    },
-    choose4(){
-      this.selected  = 'tab-container4'
-    },
-     choose5(){
-      this.selected  = 'tab-container5'
-    }
-  }
+  name: 'Maining'
 }
 </script>
 
@@ -98,8 +58,10 @@ left:0;
 width: 100%;
 
 }
-span{
+.mint-tab-item a span{
   color:black;
+  font-size: 0.2rem;
+  margin-top: 0.08rem;
 }
 .mint-tab-item-label{
   display: flex;
@@ -115,7 +77,7 @@ span{
 .mint-tab-container-wrap{
   height: 100vh-2rem
 }
-.mint-tab-item{
+.mint-tab-item a{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,5 +88,15 @@ span{
 }
 #box .mt-tab-container-item{
   background: #F2F2F2;
+  height:100%;
+}
+.sp{
+  height:100vh;
+}
+.mint-tab-container-item .classify{
+  position:static;
+  width:100vw;
+  height:100vh;
+  background:#F2F2F2; 
 }
 </style>

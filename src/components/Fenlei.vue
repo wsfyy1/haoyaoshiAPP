@@ -28,7 +28,7 @@
 				</li>
 				<li>
 					<router-link :to="{ name:'AllBuy' }">
-						<i class="iconfont icon-quanqiu"></i>
+						<i class="iconfont icon-quanqiu1"></i>
 						<span>全球购</span>
 					</router-link>
 				</li>
@@ -78,6 +78,7 @@
 		width:100%;
 		margin: 0;
 		margin-top: 5px;
+		padding-top:10px;
 	}
 	.fenlei ul li{
 		list-style: none;
@@ -106,7 +107,7 @@
 	.icon-quan{background: #ff135b}
 	.icon-bao{background: #ff4513}
 	.icon-yaoxiang{background: #ff135b}
-	.icon-quanqiu{background: #12eddb}
+	.icon-quanqiu1{background: #12eddb}
 	.icon-zizhen{background: #e5004f}
 	.icon-caigouxunyuan{background: #ff5500}
 	.icon-wuliuchaxun_Nose{background: #08a7e7}

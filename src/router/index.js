@@ -1,7 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Head from '@/components/Head'
+import Swipper from '@/components/Swipper'
 import Fenlei from '@/components/Fenlei'
+import Pindao from '@/components/Pindao'
+import Yqlink from '@/components/Yqlink'
+
+
 import Classify from '@/components/Classify'
 import Quan from '@/components/Quan'
 import Bao from '@/components/Bao'
@@ -10,17 +15,11 @@ import AllBuy from '@/components/AllBuy'
 import SelfHelp from '@/components/SelfHelp'
 import MySearch from '@/components/MySearch'
 import WuliuSearch from '@/components/WuliuSearch'
-
+import Register from '@/components/Register'
 import Wode from '@/components/Wode'
 
-import Pindao from '@/components/Pindao'
+
 import Lingshi from '@/components/Lingshi'
-/*import Muying from '@/components/Muying'
-import Jisheng from '@/components/Jisheng'
-import Man from '@/components/Man'
-import Woman from '@/components/Woman'
-import Child from '@/components/Child'
-import Old from '@/components/Old'*/
 
 
 
@@ -29,15 +28,11 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-    path:"/",
-   	name: 'Head',
-     component: Head
-  },
-	{
-		path:"/",
-      name: 'Fenlei',
-      component: Fenlei
-    },{
+      path: '/',
+      name: 'Head',
+      component: Head
+    },
+    {
     	path: '/Classify',
 	    name: 'Classify',
 	    component: Classify
@@ -70,43 +65,18 @@ export default new Router({
 	    name: 'WuliuSearch',
 	    component: WuliuSearch
     },{
-    	path:"/",
-      name: 'Pindao',
-      component: Pindao
-    },{
     	path:"/Lingshi/:id",
       name: 'Lingshi',
       component: Lingshi
-    },
-  /*  {
-    	path:"/Muying/:id",
-      name: 'Muying',
-      component: Muying
-    },
-    {
-    	path:"/Jisheng/:id",
-      name: 'Jisheng',
-      component: Jisheng
-    },
-    {
-    	path:"/Man/:id",
-      name: 'Man',
-      component: Man
-    },
-    {
-    	path:"/Woman/:id",
-      name: 'Woman',
-      component: Woman
-    },
-     {
-    	path:"/Child/:id",
-      name: 'Child',
-      component: Child
-    },
-    {
-    	path:"/Old/:id",
-      name: 'Old',
-      component: Old
-    }*/
+    },{
+      path:"/Register",
+      name: 'Register',
+      component: Register
+    },{
+      path:"/Wode",
+      name: 'Wode',
+      component: Wode
+    }
+
   ]
 })

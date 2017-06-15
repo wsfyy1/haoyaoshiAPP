@@ -7,15 +7,14 @@
 			  <mt-button icon="more" slot="right" @click="xianshi"></mt-button>
 	  	</mt-header>
 		<div class="Pnumber">
-			<input type="text" placeholder="请输入手机号">
+			<input type="text" v-model="zhanghao" placeholder="请输入账号">
 		</div>
 		<div class="yanzhengma">
-			<input type="text" placeholder="请输入手机验证码">
-			<button class="btn">获取验证码</button>
+			<input type="password" v-model="mima" placeholder="请输入密码">
+			<!-- <button class="btn">获取验证码</button> -->
 		</div>
-		<button class="denglu">立即登录</button>
-		<router-link to="" class="a1">免费注册</router-link>
-		<router-link to="" class="a2">账号登录</router-link>
+		<button class="denglu" @click="tijiao">立即登录</button>
+		<router-link :to="{ name:'Register' }" class="a1">免费注册</router-link>
 		<p>您还可以通过以下方式登录：</p>
 		<div class="fangshi">
 			<dl>
@@ -30,21 +29,46 @@
 	</div>
 </template>
 <script>
+import jsonp from "jsonp"
+import Vue from "vue"
+import { MessageBox } from 'mint-ui';
 export default {
   name: 'Wode',
   data:function(){
 		return {
-			 yincang:true,
+			yincang:true,
 			arr:"",
+			zhanghao:"",
+	  		mima:"",
+	  		cheng:""
 		}
-	}, 	
+	}, 
+	computed:function(){
+  		MessageBox('提示', '操作成功');
+  	},	
 	methods:{
 		xianshi(){
 			this.yincang=true
 		},
-			
-	}
-  
+		tijiao:function(){
+	  		console.log(this.zhanghao)
+	  		var url = "http://datainfo.duapp.com/shopdata/userinfo.php?status=login&userID="+this.zhanghao+"&password="+this.mima
+	  		Vue.axios.post(url).then((res)=> {
+	  		 	console.log(res)
+	    		 return res.data
+	   		}).then((data)=>{
+	   			if(data==0){
+	   				MessageBox.alert("用户名不存在", "提示");
+	   			}else if(data==2){
+	   				MessageBox.alert("账号密码不匹配", "提示");
+
+	   			}else{
+	   				this.cheng="登录成功"
+	   				this.$router.push("/")
+	   			}
+	   		})
+  		}
+  	}  	 
 }
 </script>
 <style scope>
@@ -65,6 +89,7 @@ export default {
 	.wode .Pnumber{
 		width:100%;
 		height:0.8rem;
+		margin-top: 1rem;
 	}
 	.wode .Pnumber input{
 		width:100%;
@@ -78,6 +103,7 @@ export default {
 		height:0.8rem;
 		border-top: 1px solid #dcdcdc;
 		border-bottom: 1px solid #dcdcdc;
+		background: #fff;
 	}
 	.wode .yanzhengma input{
 		display: block;
@@ -87,7 +113,7 @@ export default {
 		border:0;
 		outline: none;
 	}
-	.wode .yanzhengma button{
+	/*.wode .yanzhengma button{
 		display: block;
 		width:28%;
 		height:80%;
@@ -99,7 +125,7 @@ export default {
 		color:#fff;
 		border-radius:2px;
 		outline: none;
-	}
+	}*/
 	.wode .denglu{
 		width:90%;
 		height:0.7rem;
@@ -114,15 +140,8 @@ export default {
 		color:#5790bb;
 		font-size: 0.25rem;
 		float:right;
-		border-left: 2px solid #bfbfbf;
 		margin-top: 10px;
 		padding-left: 10px;
-	}
-	.wode .a2{
-		color:#5790bb;
-		font-size: 0.25rem;
-		float:right;
-		margin-top: 10px;
 	}
 	.wode p{
 		width:90%;
@@ -150,6 +169,7 @@ export default {
 		padding: 0.1rem 0 0 0.1rem;
 		border-radius: 0.45rem;
 		border:1px solid #d2d2d2;
+		background:#fff;
 	}
 	.wode .fangshi dl dt img{
 		display: block;
