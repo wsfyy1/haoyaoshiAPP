@@ -58,6 +58,7 @@ export default {
 		width: 100%;
 		display: flex;
 		justify-content: space-around;
+		background: #fff;
 	}
 	.pin dl{
 		display: flex;
@@ -77,6 +78,8 @@ export default {
 		display: flex;
 		/* justify-content: space-between; */
 		flex-flow: row wrap;
+		background: #fff;
+		margin-top: 5px;
 	}
 	.dao dl{
 		width: 100%;

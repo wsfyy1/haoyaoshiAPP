@@ -10,6 +10,9 @@ import AllBuy from '@/components/AllBuy'
 import SelfHelp from '@/components/SelfHelp'
 import MySearch from '@/components/MySearch'
 import WuliuSearch from '@/components/WuliuSearch'
+
+import Wode from '@/components/Wode'
+
 import Pindao from '@/components/Pindao'
 import Lingshi from '@/components/Lingshi'
 /*import Muying from '@/components/Muying'
@@ -18,6 +21,7 @@ import Man from '@/components/Man'
 import Woman from '@/components/Woman'
 import Child from '@/components/Child'
 import Old from '@/components/Old'*/
+
 
 
 Vue.use(Router)
