@@ -27,7 +27,7 @@
 					</router-link>
 				</li>
 				<li>
-					<router-link :to="{ name:'AllBuy' }">
+					<router-link :to="{ name:'Lingshi' , params:{ id:1617 } }">
 						<i class="iconfont icon-quanqiu1"></i>
 						<span>全球购</span>
 					</router-link>
@@ -79,6 +79,7 @@
 		margin: 0;
 		margin-top: 5px;
 		padding-top:10px;
+		padding-left: 0;
 	}
 	.fenlei ul li{
 		list-style: none;

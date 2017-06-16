@@ -11,9 +11,9 @@
               </router-link>
             </mt-tab-item>
             <mt-tab-item  >
-              <router-link :to="{ name:'Classify' }">
+              <router-link :to="{ name:'Lingshi' , params:{ id:1666 } }">
                 <i class="iconfont icon-ditu" ></i>  
-                <span> 联系我们</span>
+                <span> 热销产品</span>
               </router-link>
             </mt-tab-item>
             <mt-tab-item >
@@ -58,42 +58,42 @@ left:0;
 width: 100%;
 
 }
-.mint-tab-item a span{
+.footer .mint-tab-item a span{
   color:black;
   font-size: 0.2rem;
   margin-top: 0.08rem;
 }
-.mint-tab-item-label{
+.footer .mint-tab-item-label{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow:  column nowrap;
 }
 
-.iconfont{
+.footer .iconfont{
   color:#000;
   font-size:0.4rem;
 }
-.mint-tab-container-wrap{
+.footer .mint-tab-container-wrap{
   height: 100vh-2rem
 }
-.mint-tab-item a{
+.footer .mint-tab-item a{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow:  column nowrap;
 }
-.mint-tabbar{
+.footer .mint-tabbar{
   height: 1rem;
 }
 #box .mt-tab-container-item{
   background: #F2F2F2;
   height:100%;
 }
-.sp{
+.footer .sp{
   height:100vh;
 }
-.mint-tab-container-item .classify{
+.footer .mint-tab-container-item .classify{
   position:static;
   width:100vw;
   height:100vh;

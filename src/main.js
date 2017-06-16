@@ -3,10 +3,14 @@
 import Vue from 'vue'
 import {Header,Button ,Cell,Search ,TabContainer, TabContainerItem ,Tabbar, TabItem,Picker,Navbar,Swipe,SwipeItem,MessageBox} from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import '../static/style/iconfont1/iconfont.css'
+import '../static/style/iconfont2/iconfont.css'
 import Maining  from './Maining'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+// import Amazeui from 'amazeui'
+// import 'amazeui/dist/css/amazeui.min.css'
 
 
 Vue.config.productionTip = false

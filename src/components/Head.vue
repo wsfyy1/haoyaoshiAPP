@@ -3,17 +3,12 @@
     <div class="head">
       <img src="http://m.ehaoyao.com/v4/images/logo.png">
       <mt-search  class="search"  placeholder="请输入你要搜索的商品"></mt-search>
-      <a href="">登录</a>
+      <router-link :to="{ name:'Wode' }">登录</router-link>
     </div> 
     <Swipper></Swipper>
     <Fenlei></Fenlei>
     <Pindao></Pindao>
     <Yqlink></Yqlink>
-     <div data-am-widget="gotop" class="am-gotop am-gotop-fixed" >
-        <a href="#/" title="">
-            <i class="iconfont icon-fanhuidingbu"></i>
-        </a> 
-    </div>
   </div>
 </template>
 
@@ -86,15 +81,5 @@ a{
   color:white;
   padding-right: 0.2rem
 }
-.am-gotop-fixed{
-  position: fixed;
-  top:80vh;
- right:0.1rem;
- z-index:100;
- opacity: 0.5
 
-}
-.icon-fanhuidingbu{
-  font-size: 0.5rem
-}
 </style>

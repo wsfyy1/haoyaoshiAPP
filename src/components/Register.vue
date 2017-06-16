@@ -1,9 +1,7 @@
 <template>
 	<div class="register">
 		<mt-header fixed title="用户注册">
-	  		 <router-link to="/" slot="left">
-			    <mt-button icon="back" v-if="yincang">返回</mt-button>
-			  </router-link>
+			  <mt-button icon="back" v-if="yincang" slot="left" @click="shang">返回</mt-button>
 			  <mt-button icon="more" slot="right" ></mt-button>
 	  	</mt-header>
 		<div class="Pnumber">
@@ -30,6 +28,9 @@ export default {
 		}
 	},
 	methods:{
+		shang(){
+	  		this.$router.go(-1)
+	  	},
 		tijiao:function(){
 			console.log(this.zhanghao)
 			var url = "http://datainfo.duapp.com/shopdata/userinfo.php?status=register&userID="+this.zhanghao+"&password="+this.mima

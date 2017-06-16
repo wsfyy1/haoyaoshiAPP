@@ -1,26 +1,21 @@
 <template>
-	<div>
-	
+	<div>	
 		<div class="lingshi">
-		<mt-header fixed  class="titl" title="好药师商城">
-  		 <router-link to="/" slot="left">
-		    <mt-button icon="back"  class="yc" v-if="yincang">返回</mt-button>
-		  </router-link>
-		  <mt-button icon="more" slot="right" ></mt-button>
-  	</mt-header>
-	<ul>
-    	<li v-for="item in arr">
-    		<!-- <router-link :to="{ name:'Xiang', params:{id:item.goodsId}}"> -->
-    		<img :src="item.imageLink" />
-    		<p>{{item.itemName}}</p>
-    		<p>{{item.factory}}</p>
-    		<p><span class="brand">{{item.tags[2]}}</span></p>
-    		<p><span class="pri">￥{{item.price}}</span><i class="iconfont icon-gouwuche1"></i></p>
-    		</router-link>
-    	</li>
-    </ul>
-		</div>
-		
+			<mt-header fixed  class="titl" title="好药师商城">
+			    <mt-button icon="back" class="yc" slot="left" @click="shang">返回</mt-button>
+			  <mt-button icon="more" slot="right" ></mt-button>
+		  	</mt-header>
+			<ul>
+		    	<li v-for="item in arr">
+		    		<img :src="item.imageLink" />
+		    		<p>{{item.itemName}}</p>
+		    		<p>{{item.factory}}</p>
+		    		<p class=""><span class="brand">{{item.tags[2]}}</span></p>
+		    		<p class="jiage"><span class="pri">￥{{item.price}}</span><i class="iconfont icon-gouwuche1"></i></p>
+		    		
+		    	</li>
+		    </ul>
+		</div>		
 	</div>
 </template>
 <script>
@@ -33,18 +28,16 @@ export default {
   		yincang:true,
   	}
   },
-  /* methods:{
-  	xianshi(){
-  		this.yincang=true
-  	}
-  		
-  },*/
+   methods:{
+  		shang(){
+  		this.$router.go(-1)
+  	}  		
+  },
   created:function(){
   	console.log(window.location)
   	var arr=window.location.href.split("/")
-  var str=arr[arr.length-1]
+  	var str=arr[arr.length-1]
    	console.log(str)
-
 	  var url = "/products?page=1&keyWord=&sortFields=&categories="+str+"&brand=&dosage=&type="
      Vue.axios.get(url).then((res)=> {
         return res.data.response.searchBaseInfo
@@ -53,18 +46,6 @@ export default {
       	
       	console.log(this.arr)
       })
-  
-
-/*
-created(){
-	Vue.axios.get("/products?page=1&keyWord=&sortFields=&categories=646&brand=&dosage=&").then((res) =>{  
-		console.log(res.data.response.searchBaseInfo)
-		return res.response.searchBaseInfo
-		
-	}).then((data)=>{
-		console.log(this)
-		this.arr = data
-	})*/
   }
 }
 </script>
@@ -72,64 +53,65 @@ created(){
 	.lingshi{
 		position: absolute;
 		width: 100%;
-		/*height: 100vh;*/
 		z-index:100;
 		left:0rem;
 		top:1rem;
-		background:white;
+		background:#F2F2F2;
 	}
-<<<<<<< HEAD
-
-=======
 	.lingshi .mint-header{
 		background: #0075de;
 		height:1rem;
 	}
->>>>>>> 863083844305da7dc77925326e4fad2ed4d51c44
 	.lingshi .titl{
 		font-size:0.3rem;
 		height: 1rem
-
 	}
 	.lingshi ul{
 		display: flex;
-		justify-content: space-around;
+		justify-content: center;
 		flex-flow:row wrap;
 	}
 	.lingshi li {
-		width: 48%;
-		height: 5rem;
+		width: 46%;
 		list-style: none;
-		padding-left: 0.1rem
+		padding: 0.1rem;
+		border:1px solid #dcdcdc;
 	}
 	.lingshi .yc{
 		font-size:0.25rem;
+	}
+	.lingshi li img{
+		display: block;
+		margin:0 auto;
 	}
 	.lingshi li p{
 		font-size:0.22rem;
 		text-overflow: ellipsis;
 		overflow: hidden;
 		white-space: nowrap;
+		margin:5px 0;
+	}
+	.lingshi li .jiage{
+		margin:10px 0;
 	}
 	.lingshi li span{
-		font-size:0.22rem;
+		font-size:0.1rem;		
 	}
 	.brand{
-		background: skyblue;
-
-		
+		background: #0075de;
+		border-radius: 2px;
+		color:white;		
 	}
 	.pri{
 		color: #f00;
-		margin-right: 2rem
+		float:left;
+		margin-top: 0.1rem;
 	}
 	 .icon-gouwuche1{
-	 	/* width: 1rem;
-	 	height:1rem; */
+	 	float:right;
 	 	color:white;
 	 	background: #e7103e;
-	 	border-radius: 0.5rem
+	 	border-radius: 0.2rem;
+	 	font-size: 0.38rem!important;
 	 }
-
-
 </style>

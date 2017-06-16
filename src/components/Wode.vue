@@ -1,9 +1,7 @@
 <template>
 	<div class="wode">
 		<mt-header fixed title="手机验证码登录">
-	  		 <router-link to="/" slot="left">
-			    <mt-button icon="back" v-if="yincang">返回</mt-button>
-			  </router-link>
+			  <mt-button icon="back" v-if="yincang" slot="left" @click="shang">返回</mt-button>
 			  <mt-button icon="more" slot="right" @click="xianshi"></mt-button>
 	  	</mt-header>
 		<div class="Pnumber">
@@ -22,15 +20,19 @@
 				<dd>微博登录</dd>
 			</dl>
 			<dl>
-				<dt><img src="http://m.ehaoyao.com/v4/images/qq1_d6f3c00.png" alt=""></dt>
-				<dd>QQ登录</dd>
+				<a href="tencent://message/?uin=292042177&Site=有事Q我&Menu=yes">
+					<dt><img src="http://m.ehaoyao.com/v4/images/qq1_d6f3c00.png" alt=""></dt>
+					<dd>QQ登录</dd>
+				</a>
 			</dl>
 		</div>
+		<Yqlink></Yqlink>
 	</div>
 </template>
 <script>
 import jsonp from "jsonp"
 import Vue from "vue"
+import Yqlink from '@/components/Yqlink'
 import { MessageBox } from 'mint-ui';
 export default {
   name: 'Wode',
@@ -43,6 +45,9 @@ export default {
 	  		cheng:""
 		}
 	}, 
+  components:{
+  	Yqlink
+  },
 	computed:function(){
   		MessageBox('提示', '操作成功');
   	},	
@@ -50,6 +55,9 @@ export default {
 		xianshi(){
 			this.yincang=true
 		},
+		shang(){
+	  		this.$router.go(-1)
+	  	},
 		tijiao:function(){
 	  		console.log(this.zhanghao)
 	  		var url = "http://datainfo.duapp.com/shopdata/userinfo.php?status=login&userID="+this.zhanghao+"&password="+this.mima
@@ -64,7 +72,7 @@ export default {
 
 	   			}else{
 	   				this.cheng="登录成功"
-	   				this.$router.push("/")
+	   				this.$router.go(-1)
 	   			}
 	   		})
   		}
@@ -113,19 +121,6 @@ export default {
 		border:0;
 		outline: none;
 	}
-	/*.wode .yanzhengma button{
-		display: block;
-		width:28%;
-		height:80%;
-		margin: 1% 3% 0 0;
-		border: 0;
-		float: right;
-		font-size: 0.25rem;
-		background: #0075de;
-		color:#fff;
-		border-radius:2px;
-		outline: none;
-	}*/
 	.wode .denglu{
 		width:90%;
 		height:0.7rem;
@@ -156,12 +151,18 @@ export default {
 		width:100%;
 		height:0.8rem;
 		padding-left:10%;
+		margin-bottom: 0.35rem;
 	}
 	.wode .fangshi dl{
 		width:0.9rem;
 		height:1.2rem;
 		float:left;
 		margin-left: 60px;
+	}
+	.wode .fangshi dl a{
+		display: block;
+		width: 100%;
+		height:100%;
 	}
 	.wode .fangshi dl dt{
 		width:0.7rem;

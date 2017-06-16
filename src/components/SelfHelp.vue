@@ -2,37 +2,31 @@
 	<div class="selfHelp">
 		<mt-header fixed title="自诊助手">
 	  		 <router-link to="/" slot="left">
-			    <mt-button icon="back" v-if="yincang">返回</mt-button>
+			    <mt-button icon="back">返回</mt-button>
 			  </router-link>
 			  <mt-button icon="more" slot="right" @click="xianshi"></mt-button>
 	  	</mt-header>
 		<h3>请选择您的性别以及出生日期</h3>
 		<div class="sex">
-			<button class="activeSex" >男</button>
-			<button >女</button>
+			<button :class="flag1" @click="sure1">男</button>
+			<button :class="flag2" @click="sure2">女</button>
 		</div>			
-		<input type="text" placeholder="请输入您的出生日期" class="birth">	
+		<input type="text" placeholder="请选择或输入您的出生日期" class="birth">	
 		<mt-picker :slots="slots" @change="onValuesChange"></mt-picker>
-		<mt-button type="primary" size="large"  @click="handleClick" class="next">下一步</mt-button>
+		
+			<router-link :to="{ name:'Medicine' }"><mt-button type="primary" size="large" class="next">下一步</mt-button></router-link>
+		
 	</div>
 </template>
 <script>
 export default {
   	name: 'SelfHelp',	
-	methods: {
-		xianshi(){
-			this.yincang=true
-		},
-	    onValuesChange(picker, values) {
-	      if (values[0] > values[1]) {
-	        picker.setSlotValue(1, values[0]);
-	      }
-	    }
-	 },
 	data() {
 	    return {
 	      yincang:true,
 		  arr:"",
+		  flag1:"activeSex",
+		  flag2:false,
 	      slots: [
 	        {
 	          flex: 1,
@@ -59,8 +53,27 @@ export default {
 	          textAlign: 'center'
 	        }
 	      ]
-	    };
-	}
+	    }
+	},
+	methods:{
+		xianshi(){
+			this.yincang=true
+		},
+	    onValuesChange(picker, values) {
+	      if (values[0] > values[1]) {
+	        picker.setSlotValue(1, values[0]);
+	      }
+	    },
+	    sure1(){	    	 
+	    		this.flag1 = "activeSex";
+	    		this.flag2 = false;	    	
+	    },
+	     sure2(){	    	 
+	    		this.flag2 = "activeSex";
+	    		this.flag1 = false;	    			    	
+	    }
+	    
+	 }
 }
 </script>
 <style scope>
@@ -125,5 +138,12 @@ export default {
 		position: fixed;
 		left:0;
 		bottom: 0;
+	}
+	.selfHelp .next a{
+		display: block;
+		width: 100%;
+		height:0.5rem;
+		text-align: center;
+		line-height: 0.5rem;
 	}
 </style>

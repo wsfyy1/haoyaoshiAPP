@@ -1,9 +1,7 @@
 <template>
 	<div class="medicine">
 		<mt-header fixed title="家庭药箱">
-	  		 <router-link to="/" slot="left">
-			    <mt-button icon="back" v-if="yincang">返回</mt-button>
-			  </router-link>
+			  <mt-button icon="back" slot="left" @click="shang">返回</mt-button>
 			  <mt-button icon="more" slot="right" @click="xianshi"></mt-button>
 	  	</mt-header>
 		<img src="http://img01.img.ehaoyao.com/zx/uploads/special/2016/12/67057/images/indexM_01.jpg" alt="">
@@ -31,7 +29,9 @@ export default {
 		xianshi(){
 			this.yincang=true
 		},
-			
+		shang(){
+	  		this.$router.go(-1)
+	  	}	
 	}
 }	
 </script>

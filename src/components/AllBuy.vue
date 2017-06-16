@@ -1,9 +1,7 @@
 <template>
 	<div class="allBuy">
-		<mt-header fixed title="全球购">
-	  		 <router-link to="/" slot="left">
-			    <mt-button icon="back" v-if="yincang">返回</mt-button>
-			  </router-link>
+		<mt-header fixed title="全球购">  		 
+			    <mt-button icon="back" slot="left" @click="shang">返回</mt-button>
 			  <mt-button icon="more" slot="right" @click="xianshi"></mt-button>
 	  	</mt-header>
 	</div>
@@ -18,9 +16,9 @@ export default {
 		}
 	}, 	
 	methods:{
-		xianshi(){
-			this.yincang=true
-		},
+		shang(){
+  		this.$router.go(-1)
+  	}
 			
 	}
 }	

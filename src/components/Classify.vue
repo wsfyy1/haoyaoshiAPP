@@ -4,7 +4,6 @@
 		  		 <router-link to="/" slot="left">
 				    <mt-button  v-if="yincang">X</mt-button>
 				  </router-link>
-				  <mt-button icon="more" slot="right" @click="xianshi"></mt-button>
 		  	</mt-header>
 			<mt-navbar v-model="selected">
 				<mt-tab-item id="1">食品百货</mt-tab-item>
@@ -158,6 +157,14 @@ export default {
 		background: #0075de;
 		height:1rem;
 	}
+	.classify .mint-header button .mint-button-text{
+		display: block;
+		width:0.4rem;
+		height:0.4rem;
+		text-align: center;
+		line-height: 0.4rem;
+		font-size: 0.4rem 
+	}
 	.classify .mint-navbar{
 		flex-direction: column;
 		width:25%;
@@ -177,6 +184,7 @@ export default {
 	.classify .mint-tab-item-label{
 		font-size:0.3rem;
 		color:black;
+		margin:50% auto;
 	}
 	.classify .mint-tab-item.is-selected .mint-tab-item-label{
 		color:#DD2726;
